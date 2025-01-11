@@ -1,6 +1,6 @@
 const getLanguage = () => {
     const params = new URLSearchParams(window.location.search);
-    return params.get("lang") || "en";
+    return params.get("lang") || "it";
 };
 
 
