@@ -35,7 +35,7 @@ const handleFormSubmit = (event) => {
     const subject = encodeURIComponent("Richiesta informazioni Componenti Abarth");
     const body = encodeURIComponent(message);
 
-    window.location.href = `mailto:mreuz99@gmail.com?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:iofciudoru@yahoo.com?subject=${subject}&body=${body}`;
 };
 
 const initContactForm = () => {

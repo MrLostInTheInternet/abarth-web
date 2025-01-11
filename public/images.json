@@ -1,2 +1,116 @@
 [
+    {
+        "id": 1,
+        "description": "Coprimozzo / Hubcap",
+        "filename": "coprimozzo1.jpeg",
+        "price": "20"
+    },
+    {
+        "id": 2,
+        "description": "Coprimozzo / Hubcap",
+        "filename": "coprimozzo2.jpg",
+        "price": "20"
+    },
+    {
+        "id": 3,
+        "description": "Cover cerchi",
+        "filename": "covercerchi1.png",
+        "price": "35"
+    },
+    {
+        "id": 4,
+        "description": "Cover cerchi",
+        "filename": "covercerchi2.png",
+        "price": "35"
+    },
+    {
+        "id": 5,
+        "description": "Logo frame",
+        "filename": "abarthlogoframe1.png",
+        "price": "40"
+    },
+    {
+        "id": 6,
+        "description": "Logo frame scorpion",
+        "filename": "abarthlogoframe2.png",
+        "price": "45"
+    },
+    {
+        "id": 9,
+        "description": "Scorpione Internal Grill",
+        "filename": "scorpioninternalgrill.jpeg",
+        "price": "15"
+    },
+    {
+        "id": 10,
+        "description": "Cornice Fendinebbia",
+        "filename": "cornicefendinebbia.jpeg",
+        "price": "25"
+    },
+    {
+        "id": 11,
+        "description": "Griglie Intercooler",
+        "filename": "griglieintercooler.jpeg",
+        "price": "30"
+    },
+    {
+        "id": 12,
+        "description": "Anelli Pulsanti Era Cruscotto",
+        "filename": "anellipulsantieracruscotto.jpeg",
+        "price": "8"
+    },
+    {
+        "id": 13,
+        "description": "Cover Fari Posteriori",
+        "filename": "coverfariposteriori.jpeg",
+        "price": "20"
+    },
+    {
+        "id": 14,
+        "description": "Dadi Valvola Cerchi",
+        "filename": "dadivalvolacerchi.jpeg",
+        "price": "10"
+    },
+    {
+        "id": 15,
+        "description": "Maniglia portellone posteriore",
+        "filename": "maniglia1.jpeg",
+        "price": "10"
+    },
+    {
+        "id": 16,
+        "description": "Maniglia portellone posteriore",
+        "filename": "maniglia2.jpeg",
+        "price": "10"
+    },
+    {
+        "id": 17,
+        "description": "Griglie Fanali Posteriori",
+        "filename": "grigliefanaliposteriori.jpeg",
+        "price": "40"
+    },
+    {
+        "id": 18,
+        "description": "595 Cover",
+        "filename": "595cover.jpeg",
+        "price": "20"
+    },
+    {
+        "id": 19,
+        "description": "Tromboncini Carburatore Webber 45",
+        "filename": "tromboncincarburatorewebber45.jpeg",
+        "price": "25"
+    },
+    {
+        "id": 20,
+        "description": "Griglia Aerodinamica",
+        "filename": "grigliaaerodinamica.jpeg",
+        "price": "40"
+    },
+    {
+        "id": 21,
+        "description": "Tromboncini Carburatore Webber 70",
+        "filename": "tromboncincarburatorewebber70.jpeg",
+        "price": "30"
+    }
 ]
