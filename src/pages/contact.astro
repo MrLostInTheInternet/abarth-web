@@ -1,0 +1,79 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout>
+  <main class="contact-form">
+    <h1>Contact</h1>
+    <form id="contactForm">
+      <label for="message">Message:</label>
+      <textarea id="message" name="message" maxlength="100"></textarea>
+      <button type="submit">Submit</button>
+    </form>
+  </main>
+</BaseLayout>
+
+<script type="module" src="/js/contact.js"></script>
+
+<style>
+  html, body {
+    margin: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+  }
+
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 300px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0.5rem;
+    box-sizing: border-box;
+    height: 100%;
+  }
+
+  h1 {
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  header {
+    width: 100%;
+    padding: 1rem;
+    background-color: #f4f4f4;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+
+  textarea {
+    width: 300px;
+    height: 150px;
+    padding: 0.5rem;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    box-sizing: border-box;
+    resize: both;
+  }
+
+  button {
+    display: block;
+    width: 100%;
+    padding: 0.5rem;
+    background-color: blue;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+
+</style>

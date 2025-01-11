@@ -1,0 +1,46 @@
+---
+import ImageCard from "../components/ImageCard.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+// Import the JSON data
+import images from "../../public/images.json";
+---
+<BaseLayout>
+  {images.length > 0 ? (
+    <div class="gallery">
+      {images.map((item) => (
+        <ImageCard
+          id={item.id}
+          image={`/images/${item.filename}`}
+          description={item.description}
+          price={item.price}
+        />
+      ))}
+    </div>
+  ) : (
+    <div class="no-images">
+      NESSUN OGGETTO NELLA LISTA
+    </div>
+  )}
+</BaseLayout>
+
+<style>
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Flexible grid layout */
+    gap: 1rem;
+    padding: 1rem;
+    justify-items: center; /* Centers the items within the grid */
+  }
+
+  .no-images {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+    font-size: 2rem; /* Large text */
+    color: lightgray;
+  }
+</style>
+

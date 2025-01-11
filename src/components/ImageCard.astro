@@ -1,0 +1,65 @@
+---
+export interface Props {
+    id: number
+    image: string;
+    description: string;
+    price: string;
+}
+const { id, image, description, price } = Astro.props;
+---
+<div class="card">
+  <img src={image} alt={description} />
+  <p class="description">{description}</p>
+  <div class="chips">
+    <span class="chip price">{price} &#8364</span>
+        <a class="chip contact" href={`/contact?id=${id}`}>Contact</a>
+    </a>
+  </div>
+</div>
+
+<style>
+  .card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 0.7rem;
+    width: 80%;
+    max-width: 300px;
+    margin: auto;
+  }
+  img {
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid #ddd;
+  }
+  .description {
+    font-size: 1rem;
+    font-weight: bold;
+    margin: 0.5rem 0;
+    color: #333;
+  }
+  .chips {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+  }
+  .chip {
+    border-radius: 16px;
+    padding: 0.5rem 1rem;
+    font-size: 1.2rem;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+  }
+  .price {
+    background-color: black;
+    font-weight: bold;
+  }
+  .contact {
+    background-color: black;
+    cursor: pointer;
+  }
+</style>
+

@@ -1,0 +1,116 @@
+---
+const currentPage = Astro.url.pathname;
+const currentLanguage = Astro.props.lang; 
+---
+
+<header>
+  <nav>
+    <ul>
+      <li>
+        <a href="/" class="navlink" aria-current={currentPage === "/" ? "page" : undefined}>Home</a>
+      </li>
+      <li>
+        <a href="/contact" class="navlink" aria-current={currentPage === "/contact" ? "page" : undefined}>Contact</a>
+      </li>
+      <li>
+        <a href="/about" class="navlink" aria-current={currentPage === "/about" ? "page" : undefined}>About me</a>
+      </li>
+      {currentPage === "/about" && (
+        <div class="language-switcher">
+          <li>
+            <a href={`${currentPage}${currentPage.includes('?') ? '&' : '?'}lang=it`} class={`language-link ${currentLanguage === 'it' ? 'active' : ''}`} aria-current={currentLanguage === 'it' ? "page" : undefined}>IT</a>
+          </li>
+          <li>
+            <a href={`${currentPage}${currentPage.includes('?') ? '&' : '?'}lang=en`} class={`language-link ${currentLanguage === 'en' ? 'active' : ''}`} aria-current={currentLanguage === 'en' ? "page" : undefined}>EN</a>
+          </li>
+        </div>
+      )}
+    </ul>
+  </nav>
+</header>
+
+<style>
+header {
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+  background-color: #f4f4f4;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  align-items: center;
+  position: relative;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.navlink {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.navlink:hover {
+  color: #007bff;
+  transform: scale(1.1);
+}
+
+.navlink::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  background-color: #007bff;
+  bottom: -5px;
+  left: 0;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.navlink:hover::after {
+  transform: scaleX(1);
+}
+
+.navlink[aria-current="page"] {
+  color: #007bff;
+  font-weight: bold;
+}
+
+.language-switcher {
+  right: 1rem;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.language-switcher a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.language-switcher a:hover {
+  color: #007bff;
+}
+
+.language-switcher a.active {
+  color: #007bff;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+</style>
+

@@ -1,0 +1,63 @@
+---
+const footerLinks = [
+  { label: "GitHub", href: "https://github.com/MrLostInTheInternet" },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/eugen-iofciu-vasile/" },
+  { label: "Instagram", href: "https://www.instagram.com/mr_euz/" },
+  { label: "Contact", href: "/contact" }
+];
+---
+
+<footer>
+  <div class="footer-content">
+    <p>© 2025 Doru Marian. All rights reserved.</p>
+    <ul class="footer-links">
+      {footerLinks.map(link => (
+        <li><a href={link.href} target="_blank" rel="noopener noreferrer">{link.label}</a></li>
+      ))}
+    </ul>
+  </div>
+</footer>
+
+<style>
+  footer {
+    background-color: #f4f4f4;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  footer p {
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    color: #333;
+  }
+
+  .footer-links {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+  }
+
+  .footer-links li {
+    font-size: 1rem;
+  }
+
+  .footer-links a {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+    transition: color 0.3s ease;
+  }
+
+  .footer-links a:hover {
+    color: #0056b3;
+  }
+</style>
+
