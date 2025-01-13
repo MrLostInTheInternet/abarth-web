@@ -15,13 +15,13 @@ const updateContent = (lang) => {
                     Ciao! Mi chiamo <b>Doru</b> e sono un appassionato di componenti Abarth e automobili. La mia passione per queste vetture mi ha portato a dedicarmi alla stampa 3D, una passione che ho coltivato nel tempo e che oggi mi consente di creare e stampare personalmente ogni singolo componente che troverai su questo sito.
                 </p>
                 <p>
-                    Ho una stampante 3D con cui realizzo ogni pezzo con la massima cura, per offrire prodotti di alta qualità. Ogni oggetto che vedi qui è stampato da me, i disegni sono presi da vari siti web o fatti interamente da me.
+                    Ho una stampante 3D con cui realizzo ogni pezzo con la massima cura, per offrire prodotti di alta qualità. Ogni oggetto che vedete qui è stampato da me, i disegni sono presi da vari siti web o fatti interamente da me.
                 </p>
                 <p>
-                    Inoltre, mio figlio, un talentuoso sviluppatore software, mi ha aiutato a costruire questo sito web. È un progetto a cui teniamo molto e siamo felici di condividerlo con voi. Il sito è sicuro e affidabile, e puoi anche trovarlo su GitHub per dare un'occhiata al codice.
+                    Inoltre, mio figlio, un talentuoso sviluppatore software, mi ha aiutato a costruire questo sito web. È un progetto a cui teniamo molto e siamo felici di condividerlo con voi. Il sito è sicuro e affidabile, e potete anche trovarlo su GitHub per dare un'occhiata al codice.
                 </p>
                 <p>
-                    Grazie per essere passato a visitare il nostro sito, spero che ti piacciano i nostri prodotti e se hai domande, non esitare a contattarci!
+                    Grazie per essere passati a visitare il nostro sito, spero che vi piacciano i nostri prodotti e se avete domande, non esitate a contattarci!
                 </p>
             `;
         } else {
