@@ -4,47 +4,86 @@ const currentLanguage = Astro.props.lang;
 ---
 
 <header>
-  <nav>
-    <ul>
-      <li>
-        <a href="/" class="navlink" aria-current={currentPage === "/" ? "page" : undefined}>Home</a>
-      </li>
-      <li>
-        <a href="/contact" class="navlink" aria-current={currentPage === "/contact" ? "page" : undefined}>Contact</a>
-      </li>
-      <li>
-        <a href="/about" class="navlink" aria-current={currentPage === "/about" ? "page" : undefined}>About me</a>
-      </li>
-      {currentPage === "/about" && (
-        <div class="language-switcher">
-          <li>
-            <a href={`${currentPage}${currentPage.includes('?') ? '&' : '?'}lang=it`} class={`language-link ${currentLanguage === 'it' ? 'active' : ''}`} aria-current={currentLanguage === 'it' ? "page" : undefined}>IT</a>
-          </li>
-          <li>
-            <a href={`${currentPage}${currentPage.includes('?') ? '&' : '?'}lang=en`} class={`language-link ${currentLanguage === 'en' ? 'active' : ''}`} aria-current={currentLanguage === 'en' ? "page" : undefined}>EN</a>
-          </li>
-        </div>
-      )}
-    </ul>
-  </nav>
+  <div class="header-content">
+    <div class="title-container">
+      <img src="/favicon.svg" alt="3D Prints Logo" class="logo" width="40" height="40" />
+      <h1 class="main-title">Abarth's 3D Prints</h1>
+    </div>
+    <nav>
+      <ul>
+        <li>
+          <a href="/" class="navlink" aria-current={currentPage === "/" ? "page" : undefined}>Home</a>
+        </li>
+        <li>
+          <a href="/contact" class="navlink" aria-current={currentPage === "/contact" ? "page" : undefined}>Contact</a>
+        </li>
+        <li>
+          <a href="/about" class="navlink" aria-current={currentPage === "/about" ? "page" : undefined}>About me</a>
+        </li>
+        {currentPage === "/about" && (
+          <div class="language-switcher">
+            <li>
+              <a href={`${currentPage}${currentPage.includes('?') ? '&' : '?'}lang=it`} class={`language-link ${currentLanguage === 'it' ? 'active' : ''}`} aria-current={currentLanguage === 'it' ? "page" : undefined}>IT</a>
+            </li>
+            <li>
+              <a href={`${currentPage}${currentPage.includes('?') ? '&' : '?'}lang=en`} class={`language-link ${currentLanguage === 'en' ? 'active' : ''}`} aria-current={currentLanguage === 'en' ? "page" : undefined}>EN</a>
+            </li>
+          </div>
+        )}
+      </ul>
+    </nav>
+  </div>
 </header>
 
 <style>
 header {
-  display: flex;
-  justify-content: center;
-  padding: 1rem;
   background-color: #f4f4f4;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+}
+
+.header-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  position: relative;
+  gap: 1rem;
+}
+
+.title-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.logo {
+  filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.2));
+}
+
+.main-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #2c3e50;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  transform: perspective(500px) rotateX(10deg);
+  transition: transform 0.3s ease;
+}
+
+.main-title:hover {
+  transform: perspective(500px) rotateX(0deg);
 }
 
 nav {
+  width: 100%;
   display: flex;
   justify-content: center;
-  align-items: center;
-  width: 100%;
 }
 
 nav ul {
@@ -52,6 +91,8 @@ nav ul {
   display: flex;
   gap: 2rem;
   align-items: center;
+  padding: 0;
+  margin: 0;
 }
 
 .navlink {
@@ -89,7 +130,6 @@ nav ul {
 }
 
 .language-switcher {
-  right: 1rem;
   display: flex;
   gap: 1rem;
   justify-content: center;
@@ -112,5 +152,24 @@ nav ul {
   text-decoration: underline;
 }
 
-</style>
+@media (max-width: 768px) {
+  .main-title {
+    font-size: 1.8rem;
+  }
 
+  nav ul {
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-title {
+    font-size: 1.5rem;
+  }
+
+  .title-container {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+</style>
