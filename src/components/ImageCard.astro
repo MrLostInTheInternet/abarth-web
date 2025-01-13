@@ -8,12 +8,13 @@ export interface Props {
 const { id, image, description, price } = Astro.props;
 ---
 <div class="card">
-  <img src={image} alt={description} />
+  <div class="image-container">
+    <img src={image} alt={description} />
+  </div>
   <p class="description">{description}</p>
   <div class="chips">
-    <span class="chip price">{price} &#8364</span>
-        <a class="chip contact" href={`/contact?id=${id}`}>Contact</a>
-    </a>
+    <span class="chip price">{price} &#8364;</span>
+    <a class="chip contact" href={`/contact?id=${id}`}>Contact</a>
   </div>
 </div>
 
@@ -28,23 +29,43 @@ const { id, image, description, price } = Astro.props;
     width: 80%;
     max-width: 300px;
     margin: auto;
+    background-color: #fff;
   }
-  img {
+
+  .image-container {
     width: 100%;
-    height: auto;
-    border-bottom: 1px solid #ddd;
+    height: 200px; /* Set a fixed height */
+    overflow: hidden; /* Crop images that exceed this height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
+
+  .image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image fills the container proportionally */
+    object-position: center; /* Centers the image */
+  }
+
+  .image-container img:before {
+    content: '';
+    display: block;
+  }
+
   .description {
     font-size: 1rem;
     font-weight: bold;
     margin: 0.5rem 0;
     color: #333;
   }
+
   .chips {
     display: flex;
     justify-content: space-between;
     margin-top: 1rem;
   }
+
   .chip {
     border-radius: 16px;
     padding: 0.5rem 1rem;
@@ -53,13 +74,22 @@ const { id, image, description, price } = Astro.props;
     text-decoration: none;
     color: white;
   }
+
   .price {
     background-color: black;
     font-weight: bold;
   }
+
   .contact {
     background-color: black;
     cursor: pointer;
   }
-</style>
 
+  .chip:hover {
+    background-color: #007bff;
+  }
+
+  .contact:hover {
+    text-decoration: underline;
+  }
+</style>
