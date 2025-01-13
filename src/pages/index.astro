@@ -1,8 +1,8 @@
 ---
 import ImageCard from "../components/ImageCard.astro";
+import ImageModal from "../components/ImageModal.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 
-// Import the JSON data
 import images from "../../public/images.json";
 ---
 <BaseLayout>
@@ -22,15 +22,16 @@ import images from "../../public/images.json";
       NESSUN OGGETTO NELLA LISTA
     </div>
   )}
+  <ImageModal />
 </BaseLayout>
 
 <style>
   .gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Flexible grid layout */
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 1rem;
     padding: 1rem;
-    justify-items: center; /* Centers the items within the grid */
+    justify-items: center;
   }
 
   .no-images {
@@ -38,9 +39,8 @@ import images from "../../public/images.json";
     text-align: center;
     justify-content: center;
     align-items: center;
-    height: 100vh; /* Full viewport height */
-    font-size: 2rem; /* Large text */
+    height: 100vh;
+    font-size: 2rem;
     color: lightgray;
   }
 </style>
-
